@@ -95,6 +95,7 @@ nav a:hover {
     width: 170px;
     padding: 12px;
     background: white;
+    border-radius: 5px;
     visibility: hidden;
     opacity: 0;
     transition: 0.6s;
@@ -1000,20 +1001,23 @@ nav a:hover {
         transition: color, background-color 0.3s;
     }
 
+    .dropdown-menu a {
+        padding: 12px;
+    }
+
     nav a:hover {
         background-color: #ddd;
     }
 
     .dropdown-menu {
         width: 100%;
-        border-radius: 5px;
         position: static;
-        height: 0;
+        max-height: 0;
         padding: 0;
     }
 
     .dropdown:hover .dropdown-menu {
-        height: 94px;
+        max-height: 100px;
     }
 
     .h-toggle-btn {
@@ -1087,6 +1091,20 @@ nav a:hover {
 /* Max width 768px */
 @media (max-width:768px) {
 
+    /* Header Section */
+    .header-top {
+        flex-flow: column wrap;
+    }
+
+    .ht-links a {
+        margin: 0 6px;
+    }
+
+    .ht-info a {
+        margin: 6px 6px 0;
+        display: inline-block;
+    }
+
     /* Slider Section */
     .sec-slider {
         height: 400px;
@@ -1148,7 +1166,7 @@ nav a:hover {
 
     /* Expert Section */
     .e-title h2 {
-        font-size: 24px;
+        font-size: 30px;
     }
 
     .e-card>div {
@@ -1202,21 +1220,6 @@ nav a:hover {
 /* Max width 600px */
 @media (max-width:600px) {
 
-    /* Header Section */
-    .header-top {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .ht-links a {
-        margin: 0 6px;
-    }
-
-    .ht-info a {
-        margin: 6px 6px 0;
-        display: inline-block;
-    }
-
     nav {
         top: 59px;
         width: 70%;
@@ -1226,9 +1229,15 @@ nav a:hover {
         padding: 10px;
     }
 
-    nav a {
+    nav a,
+    .dropdown-menu a {
         padding: 8px 10px;
         font-size: 18px;
+    }
+
+    /* Slider Section */
+    .slide p br {
+        display: none;
     }
 
     /* Welcome Section */
@@ -1290,7 +1299,7 @@ nav a:hover {
     }
 
     .e-card {
-        margin-top: 24px;
+        margin-top: 30px;
     }
 
     .e-card>div {
